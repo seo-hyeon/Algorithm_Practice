@@ -7,43 +7,41 @@ typedef struct {
 } element;
 
 //최대공약수 구하는 함수
-int gcd(int n, int m)
+int gcd(int a, int b)
+{
+	int r;
+
+	while (b != 0)
+	{
+		r = a % b;
+		a = b;
+		b = r;
+	}
+
+	return a;
+}
+
+/*int gcd(int a, int b)
 {
 	int i;
 
 	for (i = 2; i <= n && i <= m; i++)
-		if (n % i == 0 && m % i == 0)
-			return i * gcd(n / i, m / i);
+	if (n % i == 0 && m % i == 0)
+	return i * gcd(n / i, m / i);
 
 	return n * m;
+}*/
+
+int lcm(int a, int b)
+{
+	return a * b / gcd(a, b);
 }
+
+//런타임에러
 /*
 int cal(element num)
 {
-	int g = gcd(num.m, num.n);
-	int total = 0;
-	
-	while (num.x < g && num.y < g)
-	{
-		if ((num.x %  == num.m)
-		{
-			num.y =(num.y + total) % num.n;
-
-			if (num.y == num.n)
-				return num.x;
-
-			total = 0;
-		}
-
-		num.x += num.m;
-		total += num.m;
-	}
-	return -1;
-}*/
-//런타임에러
-int cal(element num)
-{
-	int g = gcd(num.m, num.n);
+	int g = lcm(num.m, num.n);
 	while (num.x != num.y && num.x < g && num.y < g)
 	{
 		if (num.x > num.y)
@@ -56,6 +54,27 @@ int cal(element num)
 		return -1;
 	else
 		return num.x;
+}*/
+
+int cal(element num)
+{
+	int g = lcm(num.m, num.n);
+	int a = gcd(num.m, num.n);
+	int n = 0, total = 0;
+
+	do
+	{
+		do
+		{
+			n = (n + a) % num.m;
+			total += a;
+		} while (n != num.x);
+	} while (total % num.n != num.y && total <= g);
+
+	if (total > g)
+		return -1;
+	else
+		return total;
 }
 int main(void)
 {

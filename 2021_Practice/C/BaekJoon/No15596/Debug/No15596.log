@@ -1,0 +1,6 @@
+﻿  15596.c
+c:\users\nabib\documents\github\algorithm_practice\2021_practice\c\baekjoon\no15596\15596.c(21): warning C4047: '=': 'int *'의 간접 참조 수준이 'int'과(와) 다릅니다.
+c:\users\nabib\documents\github\algorithm_practice\2021_practice\c\baekjoon\no15596\15596.c(22): warning C4047: '=': 'int *'의 간접 참조 수준이 'int'과(와) 다릅니다.
+c:\users\nabib\documents\github\algorithm_practice\2021_practice\c\baekjoon\no15596\15596.c(23): warning C4047: '함수': 'int *'의 간접 참조 수준이 'int *[2]'과(와) 다릅니다.
+c:\users\nabib\documents\github\algorithm_practice\2021_practice\c\baekjoon\no15596\15596.c(23): warning C4024: 'sum': 형식 및 실제 매개 변수 1의 형식이 서로 다릅니다.
+  No15596.vcxproj -> C:\Users\nabib\Documents\GitHub\Algorithm_Practice\2021_Practice\C\BaekJoon\Debug\No15596.exe
